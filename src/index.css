@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Oxygen&family=Roboto:wght@700&family=Yantramanav:wght@500&display=swap");
+body {
+  background-color: rgb(243 244 246);
+  font-family: "Oxygen", sans-serif;
+  font-family: "Roboto", sans-serif;
+  font-family: "Yantramanav", sans-serif;
+}
+
+@media (max-width: 767px) {
+  .navicon {
+    width: 1.125em;
+    height: 0.125em;
+  }
+
+  .navicon::before,
+  .navicon::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: all 0.2s ease-out;
+    content: "";
+    background: #3d4852;
+  }
+
+  .navicon::before {
+    top: 5px;
+  }
+
+  .navicon::after {
+    top: -5px;
+  }
+
+  .menu-btn:not(:checked) ~ .menu {
+    display: none;
+  }
+
+  .menu-btn:checked ~ .menu {
+    display: block;
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon::before {
+    transform: rotate(-45deg);
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon::after {
+    transform: rotate(45deg);
+  }
+
+  .menu-btn:checked ~ .menu-icon .navicon::before,
+  .menu-btn:checked ~ .menu-icon .navicon::after {
+    top: 0;
+  }
+}
+
+.maxWidth {
+  max-width: 20px;
+}
+
+/* #sortbox:checked ~ #sortboxmenu {
+  opacity: 1;
+} */
